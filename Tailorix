@@ -1,0 +1,672 @@
+#include <string>
+using namespace std;
+
+void showStyles()
+{
+    cout << "\n========== STYLES ==========\n";
+    cout << "1. Girly\n";
+    cout << "2. Youth\n";
+    cout << "3. Kids\n";
+    cout << "4. Casual\n";
+    cout << "5. Formal\n";
+    cout << "6. Sporty\n";
+}
+
+void showClothing()
+{
+    cout << "\n========== CLOTHING ==========\n";
+    cout << "1. T-Shirt\n";
+    cout << "2. Hoodie\n";
+    cout << "3. Dress\n";
+    cout << "4. Pants\n";
+    cout << "5. Jacket\n";
+    cout << "6. Skirt\n";
+}
+
+void showSizes()
+{
+    cout << "\n========== SIZES ==========\n";
+    cout << "1. XS\n";
+    cout << "2. S\n";
+    cout << "3. M\n";
+    cout << "4. L\n";
+    cout << "5. XL\n";
+    cout << "6. XXL\n";
+    cout << "7. Custom Measurements\n";
+}
+
+void showColors()
+{
+    cout << "\n========== COLORS ==========\n";
+    cout << "1. Black\n";
+    cout << "2. White\n";
+    cout << "3. Pink\n";
+    cout << "4. Blue\n";
+    cout << "5. Red\n";
+    cout << "6. Beige\n";
+    cout << "7. Green\n";
+}
+
+void showFabrics()
+{
+    cout << "\n========== FABRICS ==========\n";
+    cout << "1. Cotton\n";
+    cout << "2. Jeans\n";
+    cout << "3. Linen\n";
+    cout << "4. Polyester\n";
+    cout << "5. Wool\n";
+}
+
+void showPatterns()
+{
+    cout << "\n========== PATTERNS ==========\n";
+    cout << "1. No Pattern\n";
+    cout << "2. Flower\n";
+    cout << "3. Butterfly\n";
+    cout << "4. Heart\n";
+    cout << "5. Stars\n";
+    cout << "6. Cartoon\n";
+    cout << "7. Custom Print\n";
+}
+
+void showFits()
+{
+    cout << "\n========== FIT ==========\n";
+    cout << "1. Slim\n";
+    cout << "2. Regular\n";
+    cout << "3. Loose\n";
+}
+
+void showSleeves()
+{
+    cout << "\n========== SLEEVES ==========\n";
+    cout << "1. Short\n";
+    cout << "2. Long\n";
+    cout << "3. Sleeveless\n";
+}
+
+void showExtras()
+{
+    cout << "\n========== EXTRAS ==========\n";
+    cout << "1. Pocket\n";
+    cout << "2. Hood\n";
+    cout << "3. Zipper\n";
+    cout << "4. Buttons\n";
+    cout << "5. Embroidery\n";
+    cout << "6. Print\n";
+    cout << "7. No Extra\n";
+}
+
+int main()
+{
+    int choice;
+
+    string customerName;
+    string phone;
+    string address;
+
+    int orderID = 1001;
+
+    double totalSales = 0;
+
+    do
+    {
+        cout << "\n\n";
+        cout << "========================================\n";
+        cout << "              TAILORIX\n";
+        cout << "     DESIGN IT. WEAR IT. MAKE IT YOURS.\n";
+        cout << "========================================\n";
+
+        cout << "\n1. Create New Custom Design";
+        cout << "\n2. View Tailoring Information";
+        cout << "\n3. Track Order";
+        cout << "\n4. Admin Panel";
+        cout << "\n5. Exit";
+
+        cout << "\n\nEnter your choice: ";
+        cin >> choice;
+
+        // ================= CREATE DESIGN =================
+
+        if (choice == 1)
+        {
+            string style;
+            string clothing;
+            string size;
+            string color;
+            string fabric;
+            string pattern;
+            string fit;
+            string sleeves;
+
+            int styleChoice;
+            int clothingChoice;
+            int sizeChoice;
+            int colorChoice;
+            int fabricChoice;
+            int patternChoice;
+            int fitChoice;
+            int sleeveChoice;
+
+            double basePrice = 0;
+            double fabricPrice = 0;
+            double patternPrice = 0;
+            double extraPrice = 0;
+            double customPrice = 0;
+
+            cout << "\n========== CREATE YOUR DESIGN ==========\n";
+
+            // STYLE
+            showStyles();
+
+            cout << "\nChoose Style: ";
+            cin >> styleChoice;
+
+            if (styleChoice == 1)
+                style = "Girly";
+            else if (styleChoice == 2)
+                style = "Youth";
+            else if (styleChoice == 3)
+                style = "Kids";
+            else if (styleChoice == 4)
+                style = "Casual";
+            else if (styleChoice == 5)
+                style = "Formal";
+            else if (styleChoice == 6)
+                style = "Sporty";
+            else
+                style = "Casual";
+
+            // CLOTHING
+            showClothing();
+
+            cout << "\nChoose Clothing: ";
+            cin >> clothingChoice;
+
+            if (clothingChoice == 1)
+            {
+                clothing = "T-Shirt";
+                basePrice = 350;
+            }
+            else if (clothingChoice == 2)
+            {
+                clothing = "Hoodie";
+                basePrice = 600;
+            }
+            else if (clothingChoice == 3)
+            {
+                clothing = "Dress";
+                basePrice = 800;
+            }
+            else if (clothingChoice == 4)
+            {
+                clothing = "Pants";
+                basePrice = 500;
+            }
+            else if (clothingChoice == 5)
+            {
+                clothing = "Jacket";
+                basePrice = 900;
+            }
+            else if (clothingChoice == 6)
+            {
+                clothing = "Skirt";
+                basePrice = 550;
+            }
+            else
+            {
+                clothing = "T-Shirt";
+                basePrice = 350;
+            }
+
+            // SIZE
+            showSizes();
+
+            cout << "\nChoose Size: ";
+            cin >> sizeChoice;
+
+            if (sizeChoice == 1)
+                size = "XS";
+            else if (sizeChoice == 2)
+                size = "S";
+            else if (sizeChoice == 3)
+                size = "M";
+            else if (sizeChoice == 4)
+                size = "L";
+            else if (sizeChoice == 5)
+                size = "XL";
+            else if (sizeChoice == 6)
+                size = "XXL";
+            else if (sizeChoice == 7)
+            {
+                size = "Custom Measurements";
+                customPrice = 150;
+            }
+            else
+                size = "M";
+
+            // COLOR
+            showColors();
+
+            cout << "\nChoose Color: ";
+            cin >> colorChoice;
+
+            if (colorChoice == 1)
+                color = "Black";
+            else if (colorChoice == 2)
+                color = "White";
+            else if (colorChoice == 3)
+                color = "Pink";
+            else if (colorChoice == 4)
+                color = "Blue";
+            else if (colorChoice == 5)
+                color = "Red";
+            else if (colorChoice == 6)
+                color = "Beige";
+            else if (colorChoice == 7)
+                color = "Green";
+            else
+                color = "Black";
+
+            // FABRIC
+            showFabrics();
+
+            cout << "\nChoose Fabric: ";
+            cin >> fabricChoice;
+
+            if (fabricChoice == 1)
+            {
+                fabric = "Cotton";
+                fabricPrice = 100;
+            }
+            else if (fabricChoice == 2)
+            {
+                fabric = "Jeans";
+                fabricPrice = 150;
+            }
+            else if (fabricChoice == 3)
+            {
+                fabric = "Linen";
+                fabricPrice = 180;
+            }
+            else if (fabricChoice == 4)
+            {
+                fabric = "Polyester";
+                fabricPrice = 80;
+            }
+            else if (fabricChoice == 5)
+            {
+                fabric = "Wool";
+                fabricPrice = 250;
+            }
+            else
+            {
+                fabric = "Cotton";
+                fabricPrice = 100;
+            }
+
+            // PATTERN
+            showPatterns();
+
+            cout << "\nChoose Pattern: ";
+            cin >> patternChoice;
+
+            if (patternChoice == 1)
+            {
+                pattern = "No Pattern";
+            }
+            else if (patternChoice == 2)
+            {
+                pattern = "Flower";
+                patternPrice = 50;
+            }
+            else if (patternChoice == 3)
+            {
+                pattern = "Butterfly";
+                patternPrice = 70;
+            }
+            else if (patternChoice == 4)
+            {
+                pattern = "Heart";
+                patternPrice = 50;
+            }
+            else if (patternChoice == 5)
+            {
+                pattern = "Stars";
+                patternPrice = 60;
+            }
+            else if (patternChoice == 6)
+            {
+                pattern = "Cartoon";
+                patternPrice = 100;
+            }
+            else if (patternChoice == 7)
+            {
+                pattern = "Custom Print";
+                patternPrice = 150;
+            }
+            else
+            {
+                pattern = "No Pattern";
+            }
+
+            // FIT
+            showFits();
+
+            cout << "\nChoose Fit: ";
+            cin >> fitChoice;
+
+            if (fitChoice == 1)
+                fit = "Slim";
+            else if (fitChoice == 2)
+                fit = "Regular";
+            else if (fitChoice == 3)
+                fit = "Loose";
+            else
+                fit = "Regular";
+
+            // SLEEVES
+            showSleeves();
+
+            cout << "\nChoose Sleeves: ";
+            cin >> sleeveChoice;
+
+            if (sleeveChoice == 1)
+                sleeves = "Short";
+            else if (sleeveChoice == 2)
+                sleeves = "Long";
+            else if (sleeveChoice == 3)
+                sleeves = "Sleeveless";
+            else
+                sleeves = "Short";
+
+            // EXTRAS
+            showExtras();
+
+            int extraChoice;
+
+            cout << "\nChoose Extra: ";
+            cin >> extraChoice;
+
+            string extra;
+
+            if (extraChoice == 1)
+            {
+                extra = "Pocket";
+                extraPrice = 30;
+            }
+            else if (extraChoice == 2)
+            {
+                extra = "Hood";
+                extraPrice = 80;
+            }
+            else if (extraChoice == 3)
+            {
+                extra = "Zipper";
+                extraPrice = 60;
+            }
+            else if (extraChoice == 4)
+            {
+                extra = "Buttons";
+                extraPrice = 40;
+            }
+            else if (extraChoice == 5)
+            {
+                extra = "Embroidery";
+                extraPrice = 120;
+            }
+            else if (extraChoice == 6)
+            {
+                extra = "Print";
+                extraPrice = 80;
+            }
+            else
+            {
+                extra = "No Extra";
+                extraPrice = 0;
+            }
+
+            // CUSTOMER INFORMATION
+
+            cin.ignore();
+
+            cout << "\n========== CUSTOMER INFORMATION ==========\n";
+
+            cout << "Enter Name: ";
+            getline(cin, customerName);
+
+            cout << "Enter Phone: ";
+            getline(cin, phone);
+
+            cout << "Enter Address: ";
+            getline(cin, address);
+
+            // PRICE
+
+            double subtotal;
+
+            subtotal = basePrice + fabricPrice +
+                       patternPrice + extraPrice +
+                       customPrice;
+
+            double discount = 0;
+
+            if (subtotal >= 1500)
+            {
+                discount = subtotal * 0.15;
+            }
+            else if (subtotal >= 1000)
+            {
+                discount = subtotal * 0.10;
+            }
+            else if (subtotal >= 700)
+            {
+                discount = subtotal * 0.05;
+            }
+
+            int deliveryChoice;
+
+            cout << "\n========== DELIVERY ==========\n";
+            cout << "1. Standard Delivery - $50\n";
+            cout << "2. Express Delivery - $100\n";
+
+            cout << "\nChoose Delivery: ";
+            cin >> deliveryChoice;
+
+            double delivery;
+
+            if (deliveryChoice == 1)
+                delivery = 50;
+            else if (deliveryChoice == 2)
+                delivery = 100;
+            else
+                delivery = 50;
+
+            double total;
+
+            total = subtotal - discount + delivery;
+
+            // PAYMENT
+
+            int paymentChoice;
+
+            cout << "\n========== PAYMENT ==========\n";
+            cout << "1. Cash On Delivery\n";
+            cout << "2. Card\n";
+            cout << "3. Wallet\n";
+
+            cout << "\nChoose Payment: ";
+            cin >> paymentChoice;
+
+            string payment;
+
+            if (paymentChoice == 1)
+                payment = "Cash On Delivery";
+            else if (paymentChoice == 2)
+                payment = "Card";
+            else if (paymentChoice == 3)
+                payment = "Wallet";
+            else
+                payment = "Cash On Delivery";
+
+            // DESIGN SUMMARY
+
+            cout << "\n\n";
+            cout << "============================================\n";
+            cout << "             YOUR CUSTOM DESIGN\n";
+            cout << "============================================\n";
+
+            cout << "Order ID: " << orderID << endl;
+            cout << "Customer: " << customerName << endl;
+            cout << "Phone: " << phone << endl;
+
+            cout << "\n----------- DESIGN DETAILS -----------\n";
+
+            cout << "Style: " << style << endl;
+            cout << "Clothing: " << clothing << endl;
+            cout << "Size: " << size << endl;
+            cout << "Color: " << color << endl;
+            cout << "Fabric: " << fabric << endl;
+            cout << "Pattern: " << pattern << endl;
+            cout << "Fit: " << fit << endl;
+            cout << "Sleeves: " << sleeves << endl;
+            cout << "Extra: " << extra << endl;
+
+            cout << "\n----------- PRICE DETAILS -----------\n";
+
+            cout << "Base Price: $" << basePrice << endl;
+            cout << "Fabric: +$" << fabricPrice << endl;
+            cout << "Pattern: +$" << patternPrice << endl;
+            cout << "Extra: +$" << extraPrice << endl;
+            cout << "Custom Measurements: +$" << customPrice << endl;
+
+            cout << "--------------------------------------\n";
+
+            cout << "Subtotal: $" << subtotal << endl;
+            cout << "Discount: -$" << discount << endl;
+            cout << "Delivery: +$" << delivery << endl;
+
+            cout << "--------------------------------------\n";
+
+            cout << "TOTAL: $" << total << endl;
+
+            cout << "Payment: " << payment << endl;
+
+            cout << "\n============================================\n";
+            cout << "        YOUR ORDER HAS BEEN RECEIVED!\n";
+            cout << "          THANK YOU FOR CHOOSING US\n";
+            cout << "============================================\n";
+
+            totalSales += total;
+            orderID++;
+        }
+
+        // ================= INFORMATION =================
+
+        else if (choice == 2)
+        {
+            cout << "\n========== TAILORIX INFORMATION ==========\n";
+
+            cout << "\nTailorix is an online custom clothing system.\n";
+
+            cout << "\nYou can customize:\n";
+            cout << "- Style\n";
+            cout << "- Clothing Type\n";
+            cout << "- Size\n";
+            cout << "- Color\n";
+            cout << "- Fabric\n";
+            cout << "- Pattern\n";
+            cout << "- Fit\n";
+            cout << "- Sleeves\n";
+            cout << "- Extra Details\n";
+
+            cout << "\nYou can also choose:\n";
+            cout << "- Custom Measurements\n";
+            cout << "- Delivery Type\n";
+            cout << "- Payment Method\n";
+            cout << "- Promo Discounts\n";
+        }
+
+        // ================= TRACK ORDER =================
+
+        else if (choice == 3)
+        {
+            int searchOrder;
+
+            cout << "\n========== ORDER TRACKING ==========\n";
+
+            cout << "Enter Order ID: ";
+            cin >> searchOrder;
+
+            if (searchOrder < orderID && searchOrder >= 1001)
+            {
+                cout << "\nOrder ID: " << searchOrder << endl;
+
+                cout << "\nOrder Status:\n";
+                cout << "[1] Order Received\n";
+                cout << "[2] Design Confirmed\n";
+                cout << "[3] Being Tailored\n";
+                cout << "[4] Quality Check\n";
+                cout << "[5] Ready\n";
+                cout << "[6] Delivered\n";
+
+                cout << "\nCurrent Status: Being Tailored\n";
+            }
+            else
+            {
+                cout << "\nOrder not found.\n";
+            }
+        }
+
+        // ================= ADMIN =================
+
+        else if (choice == 4)
+        {
+            int adminChoice;
+
+            cout << "\n========== ADMIN PANEL ==========\n";
+
+            cout << "1. Store Statistics\n";
+            cout << "2. Total Sales\n";
+            cout << "3. Next Order ID\n";
+
+            cout << "\nEnter choice: ";
+            cin >> adminChoice;
+
+            if (adminChoice == 1)
+            {
+                cout << "\n========== STORE STATISTICS ==========\n";
+
+                cout << "System: Tailorix\n";
+                cout << "Service: Custom Clothing\n";
+                cout << "Next Order ID: " << orderID << endl;
+            }
+            else if (adminChoice == 2)
+            {
+                cout << "\nTotal Sales: $" << totalSales << endl;
+            }
+            else if (adminChoice == 3)
+            {
+                cout << "\nNext Order ID: " << orderID << endl;
+            }
+            else
+            {
+                cout << "\nInvalid choice.\n";
+            }
+        }
+
+        else if (choice == 5)
+        {
+            cout << "\nThank you for using TAILORIX!\n";
+            cout << "Design it. Wear it. Make it yours. <3\n";
+        }
+
+        else
+        {
+            cout << "\nInvalid choice. Please try again.\n";
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
